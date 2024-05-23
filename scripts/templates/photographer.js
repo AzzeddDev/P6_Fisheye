@@ -1,17 +1,53 @@
+// Function template photographer pour index.html
 function photographerTemplate(data) {
-    const { name, portrait } = data;
+    // fetch data nécessaire de l'utilisateur
+    const { name, portrait, city, country, tagline, price } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    // Créer la variable picture pour la photo de profile
+    const picture = `assets/photographers/id_photos/${portrait}`;
 
-    function getUserCardDOM() {
+    // Créer l'URL qui renvoie vers la template de photographer.html
+    const profile = `photographer.html?${name}?${portrait}?${city}?${country}?${tagline}?${price}`;
+
+    // Creation de la fonction qui recupere et qui renvoies les données
+    function getUserCardDOM(qualifiedName, value) {
         const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
+        article.setAttribute('class', 'userTemplate');
+
+        //
+        const userBtnURL = document.createElement('a');
+        userBtnURL.setAttribute("href", profile);
+
+        //
+        const userPicture = document.createElement( 'img');
+        userPicture.setAttribute("src", picture);
+        userPicture.classList.add('user-picture');
+
+        //
+        const userName = document.createElement( 'h2');
+        userName.textContent = name;
+
+        //
+        const userCountry = document.createElement('div');
+        userCountry.textContent = `${city}, ${country}`;
+
+        //
+        const userTagline = document.createElement( 'siv');
+        userTagline.textContent = tagline;
+
+        //
+        const userPrice = document.createElement( 'div');
+        userPrice.textContent = `${price}/jour`;
+
+        //
+        article.appendChild(userBtnURL).appendChild(userPicture);
+        article.appendChild(userBtnURL).appendChild(userName);
+        article.appendChild(userCountry);
+        article.appendChild(userTagline);
+        article.appendChild(userPrice);
+
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+
+    return { name, picture, profile, getUserCardDOM }
 }
