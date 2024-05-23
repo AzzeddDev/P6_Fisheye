@@ -48,3 +48,17 @@ h1 {
     height: 200px;
     width: 200px;
 }
+
+.btn-user-profile {
+    background-color: #eaecee;
+    padding: 16px 22px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-user-profile:hover {
+    background-color: #e2e3e5;
+}
