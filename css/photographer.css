@@ -94,5 +94,21 @@ form input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
+    margin: 100px 100px 0 100px;
+}
+
+.media-infos-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photograph-price {
+    position: fixed;
+    background-color: #D3573C;
+    color: #e2e3e5;
+    right: 25px;
+    bottom: 0;
+    padding: 15px 25px;
+    border-radius: 8px 8px 0 0;
 }
