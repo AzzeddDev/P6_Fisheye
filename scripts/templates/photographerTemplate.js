@@ -39,7 +39,7 @@ function photographerTemplate(data) {
 
         //
         const userPrice = document.createElement( 'div');
-        userPrice.textContent = `${price}/jour`;
+        userPrice.textContent = price + ` /jour`;
 
         //
         article.appendChild(userBtnURL).appendChild(userPicture);
