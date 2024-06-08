@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+      <link href="css/style.css" rel="stylesheet" type="text/css"/>
+      <meta charset="utf-8">
+      <link rel="icon" type="image/png" href="assets/favicon.png">
+      <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+      <title>Fisheye - photographe </title>
+      <script src="scripts/api/api.js" defer></script>
+      <script src="/scripts/templates/photographerTemplate.js" defer></script>
+      <script type="module" src="./scripts/pages/photographer.js" defer></script>
+      <script src="/scripts/utils/contactForm.js" defer></script>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+        <nav class="container">
+            <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="fisheye logo"/></a>
+        </nav>
     </header>
     
     <main id="main">
@@ -20,13 +26,15 @@
         </div>
         
         <div class="photograph-images"></div>
+        
+        <div class="photograph-price"></div>
     </main>
     
     <div id="contact_modal">
         <div class="modal">
             <header>
                 <h2>Contactez-moi</h2>
-                <img src="assets/icons/close.svg" onclick="closeModal()"/>
+                <img src="assets/icons/close.svg" onclick="closeModal()" alt=""/>
             </header>
             <form>
                 <div>
@@ -37,11 +45,5 @@
             </form>
         </div>
     </div>
-
-    <script src="scripts/api/api.js"></script>
-    <script src="/scripts/templates/photographer.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
-<!--    <script type="module" src="./scripts/pages/photographer_bis.js"></script>-->
-    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
