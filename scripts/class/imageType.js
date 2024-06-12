@@ -1,5 +1,9 @@
 export class ImageType {
     constructor(media, mediaFolder, photographersImages) {
+        this.createImageElement(media, mediaFolder, photographersImages)
+    }
+
+    createImageElement(media, mediaFolder, photographersImages) {
         const article = document.createElement("article")
         const imgElement = document.createElement("img")
         const divInfos = document.createElement("div")

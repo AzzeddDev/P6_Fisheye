@@ -1,5 +1,9 @@
 export class VideoType {
     constructor(media, mediaFolder, photographersImages) {
+        this.createVideoElement(media, mediaFolder, photographersImages)
+    }
+
+    createVideoElement(media, mediaFolder, photographersImages) {
         const article = document.createElement("article")
         const divInfos = document.createElement("div")
         const videoElement = document.createElement("video")
