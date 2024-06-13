@@ -28,7 +28,7 @@ async function displayPhotographerInfo() {
                 new PhotographerHeader(photographerData, photographerNodeList)
 
                 // Generer les Medias du photograph
-                new PhotographerMedias(photographerData, mediaList, photographersImages)
+                new PhotographerMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages)
 
 
             } else {
@@ -41,6 +41,41 @@ async function displayPhotographerInfo() {
         console.log('ID utilisateur non trouvé dans l URL.')
     }
 }
+
+
+// Fonction pour afficher les médias filtrés
+function displayFilteredMedia(mediaList, mediaFolder, photographersImages) {
+    // Effacer le contenu actuel
+    photographersImages.innerHTML = ''
+
+    // Boucler à travers les médias et afficher les éléments
+    mediaList.forEach(media => {
+        new MediaFactory(media, mediaFolder, photographersImages)
+    })
+}
+
+
+// Fonction pour filtrer les médias
+function filterMedia(type) {
+    let filteredMediaList
+
+    // conditions des filtres par: popularité - date - titre
+    if (type === 'popilarite') {
+        filteredMediaList = window.mediaList.sort((a, b) => b.likes - a.likes)
+    } else if (type === 'date') {
+        filteredMediaList = window.mediaList.sort((a, b) => new Date(b.date) - new Date(a.date))
+    } else if (type === 'titre') {
+        filteredMediaList = window.mediaList.sort((a, b) => a.title.localeCompare(b.title))
+    }
+
+
+    // console.log(filteredMediaList)
+
+    displayFilteredMedia(filteredMediaList, window.mediaFolder, window.photographersImages)
+}
+
+
+
 
 // Appeler la fonction pour afficher les informations du photographe
 displayPhotographerInfo()

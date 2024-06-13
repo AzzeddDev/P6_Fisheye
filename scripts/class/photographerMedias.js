@@ -1,11 +1,9 @@
-import {MediaFactory} from "../factory/mediaFactory.js";
-
 export class PhotographerMedias {
-    constructor(photographerData, mediaList, photographersImages) {
-        this.renderMedias(photographerData, mediaList, photographersImages)
+    constructor(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages) {
+        this.renderMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages)
     }
 
-    renderMedias(photographerData, mediaList, photographersImages) {
+    renderMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages) {
 
         // selectionner le prénom de l'utilisateur et le transformer en lowercase
         const photographerFirstName = photographerData.name.split(' ')[0].toLowerCase().replace("-", "_")
@@ -13,8 +11,22 @@ export class PhotographerMedias {
         // créer le nom du dossier au nom de l'utilisatuer ou sont stocker les images
         const mediaFolder = `assets/images/${photographerFirstName}`
 
-        mediaList.forEach(media => {
-            new MediaFactory(media, mediaFolder, photographersImages)
-        })
+        // Stocker la liste des médias pour filtrage
+        window.mediaList = mediaList
+        // console.log('Media List:', window.mediaList)
+
+        window.mediaFolder = mediaFolder
+        // console.log('Media List:', window.mediaList)
+
+        window.photographersImages = photographersImages
+        // console.log('Media List:', window.mediaList)
+
+        // Afficher tous les médias initialement
+        displayFilteredMedia(mediaList, mediaFolder, photographersImages)
+
+        // Ajouter des écouteurs d'événements pour les boutons de filtre
+        document.getElementById('filter-popilarite').addEventListener('click', () => filterMedia('popilarite'))
+        document.getElementById('filter-date').addEventListener('click', () => filterMedia('date'))
+        document.getElementById('filter-titre').addEventListener('click', () => filterMedia('titre'))
     }
 }
