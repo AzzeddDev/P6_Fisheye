@@ -94,7 +94,13 @@ form input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin: 100px 100px 0 100px;
+    margin: 25px 100px 0 100px;
+}
+
+.filter-images {
+    display: flex;
+    gap: 15px;
+    margin: 85px 100px 0 100px;
 }
 
 .media-infos-div {
@@ -111,4 +117,41 @@ form input {
     bottom: 0;
     padding: 15px 25px;
     border-radius: 8px 8px 0 0;
+}
+
+
+
+/* Bouton filtrer images */
+.dropbtn {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display:block;
 }

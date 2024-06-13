@@ -7,7 +7,7 @@
       <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
       <title>Fisheye - photographe </title>
       <script src="scripts/api/api.js" defer></script>
-      <script src="/scripts/templates/photographerTemplate.js" defer></script>
+      <script src="/scripts/templates/photographerCard.js" defer></script>
       <script type="module" src="./scripts/pages/photographer.js" defer></script>
       <script src="/scripts/utils/contactForm.js" defer></script>
   </head>
@@ -24,7 +24,18 @@
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
             <div class="user_picture"></div>
         </div>
-        
+
+        <div class="filter-images">
+            <span>Filtrer par:</span>
+            <div class="dropdown">
+                <button onclick="btnFilter()" class="dropbtn">Filtrer</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a id="filter-popilarite">Popularité</a>
+                    <a id="filter-date">Date</a>
+                    <a id="filter-titre">Titre</a>
+                </div>
+            </div>
+        </div>
         <div class="photograph-images"></div>
         
         <div class="photograph-price"></div>
@@ -45,5 +56,9 @@
             </form>
         </div>
     </div>
+
+
+    <script src="/scripts/utils/btnFilterToggle.js"></script>
+<!--    <script src="/scripts/utils/btnListFilter.js" type="module"></script>-->
   </body>
 </html>
