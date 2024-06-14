@@ -15,5 +15,5 @@ window.addEventListener('click', function(event) {
     }
 })
 
-// Event listener for the filter button
+// Event listener pour le filtre boutton
 document.getElementById('filterBtn').addEventListener('click', btnFilter)
