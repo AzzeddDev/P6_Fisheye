@@ -1,3 +1,4 @@
+// bouton filtre dropdown
 function btnFilter() {
     document.getElementById("myDropdown").classList.toggle("show")
 }

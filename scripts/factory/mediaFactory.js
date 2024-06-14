@@ -10,13 +10,13 @@ export class MediaFactory {
         }
     }
 
-    // method pour Image
+    // methode pour Image
     Image(media, mediaFolder, photographersImages) {
         // créer une nouvelle instance de ImageType
         new ImageType(media, mediaFolder, photographersImages)
     }
 
-    // method pour Video
+    // methode pour Video
     Video(media, mediaFolder, photographersImages) {
         // créer une nouvelle instance de VideoType
         new VideoType(media, mediaFolder, photographersImages)

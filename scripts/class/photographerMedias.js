@@ -15,11 +15,13 @@ export class PhotographerMedias {
         window.mediaList = mediaList
         // console.log('Media List:', window.mediaList)
 
+        // Stocker le path du dossier Medias
         window.mediaFolder = mediaFolder
-        // console.log('Media List:', window.mediaList)
+        // console.log('Media Folder Path:', window.mediaFolder)
 
+        // Stocker la div qui affiche la boucle des Medias
         window.photographersImages = photographersImages
-        // console.log('Media List:', window.mediaList)
+        // console.log('Media div selector:', window.photographersImages)
 
         // Afficher tous les médias initialement
         displayFilteredMedia(mediaList, mediaFolder, photographersImages)

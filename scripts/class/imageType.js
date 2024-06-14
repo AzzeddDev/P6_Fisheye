@@ -4,22 +4,38 @@ export class ImageType {
     }
 
     createImageElement(media, mediaFolder, photographersImages) {
+        // créer article + div
         const article = document.createElement("article")
-        const imgElement = document.createElement("img")
+        const divMedia = document.createElement("div")
         const divInfos = document.createElement("div")
+
+        // créer les elements du Media
+        const imgElement = document.createElement("img")
         const imgName = document.createElement("p")
         const imgLikes = document.createElement("span")
+        const dateMedia = document.createElement("span")
 
+        //
         imgElement.src = `${mediaFolder}/${media.image}`
         imgElement.classList.add('file-media-grid')
 
+        //
         imgName.textContent = media.title
         imgLikes.textContent = media.likes
         divInfos.classList.add('media-infos-div')
 
-        photographersImages.appendChild(article).appendChild(imgElement)
+        //
+        divMedia.classList.add('divMediaRelative')
+        dateMedia.classList.add('dateMediaAbsolute')
+        dateMedia.textContent = media.date
+
+        //
+        photographersImages.appendChild(article).appendChild(divMedia).appendChild(imgElement)
+        photographersImages.appendChild(article).appendChild(divMedia).appendChild(dateMedia)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgName)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgLikes)
+
+        //
         return article
     }
 }

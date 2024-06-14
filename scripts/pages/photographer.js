@@ -2,7 +2,7 @@ import {MediaFactory} from "../factory/mediaFactory.js"
 import {PhotographerHeader} from "../class/photographerHeader.js"
 import {PhotographerMedias} from "../class/photographerMedias.js"
 
-// Fonction pour récupérer l'ID de l'utilisateur à partir de l'URL
+// fonction pour récupérer l'ID de l'utilisateur à partir de l'URL
 function getUserIDFromURL() {
     const urlParams = new URLSearchParams(window.location.search)
     return urlParams.get('id')
@@ -20,14 +20,14 @@ async function displayPhotographerInfo() {
 
             if (photographerData) {
 
-                // Sélectionner les classes des div
+                // sélectionner les classes des div
                 const photographerNodeList = document.querySelectorAll(".user_infos, .user_picture, .photograph-price")
                 const photographersImages = document.querySelector(".photograph-images")
 
-                // Generer un Header avec les infos du photograph
+                // générer un Header avec les infos du photograph
                 new PhotographerHeader(photographerData, photographerNodeList)
 
-                // Generer les Medias du photograph
+                // générer les Medias du photograph
                 new PhotographerMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages)
 
 
@@ -43,19 +43,19 @@ async function displayPhotographerInfo() {
 }
 
 
-// Fonction pour afficher les médias filtrés
+// fonction pour afficher les médias filtrés
 function displayFilteredMedia(mediaList, mediaFolder, photographersImages) {
-    // Effacer le contenu actuel
+    // effacer le contenu actuel
     photographersImages.innerHTML = ''
 
-    // Boucler à travers les médias et afficher les éléments
+    // boucler à travers les médias et afficher les éléments
     mediaList.forEach(media => {
         new MediaFactory(media, mediaFolder, photographersImages)
     })
 }
 
 
-// Fonction pour filtrer les médias
+// fonction pour filtrer les médias
 function filterMedia(type) {
     let filteredMediaList
 
@@ -67,7 +67,6 @@ function filterMedia(type) {
     } else if (type === 'titre') {
         filteredMediaList = window.mediaList.sort((a, b) => a.title.localeCompare(b.title))
     }
-
 
     // console.log(filteredMediaList)
 

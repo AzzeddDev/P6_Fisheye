@@ -3,15 +3,12 @@ function photographerCard(data) {
     // fetch data nécessaire de l'utilisateur
     const { id, name, portrait, city, country, tagline, price } = data;
 
-    // Créer la variable picture pour la photo de profile
+    // créer la variable picture pour la photo de profile
     const picture = `assets/photographers/id_photos/${portrait}`;
-
-    // Créer l'URL qui renvoie vers la template de photographer.html
-    // const profile = `photographer.html?${name}?${portrait}?${city}?${country}?${tagline}?${price}`;
 
     const profile = `photographer.html?id=${id}`;
 
-    // Creation de la fonction qui recupere et qui renvoies les données
+    // creation de la fonction qui recupere et qui renvoies les données
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         article.setAttribute('class', 'userTemplate');

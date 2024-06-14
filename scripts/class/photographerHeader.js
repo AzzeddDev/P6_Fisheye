@@ -26,7 +26,7 @@ export class PhotographerHeader {
 
         // créer l'element user price
         const userPrice = document.createElement("span")
-        userPrice.textContent = photographerData.price + `€ / jour`
+        userPrice.textContent = photographerData.price + ` € / jour`
 
         // appendChild le nom et la photo de profile
         photographerNodeList[0].appendChild(userName)
