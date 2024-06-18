@@ -1,5 +1,5 @@
-import {ImageType} from "../class/imageType.js"
-import {VideoType} from "../class/videoType.js"
+import {ImageType} from "../class/ImageType.js"
+import {VideoType} from "../class/VideoType.js"
 
 export class MediaFactory {
     constructor(media, mediaFolder, photographersImages) {
@@ -13,12 +13,12 @@ export class MediaFactory {
     // methode pour Image
     Image(media, mediaFolder, photographersImages) {
         // créer une nouvelle instance de ImageType
-        new ImageType(media, mediaFolder, photographersImages)
+        return new ImageType(media, mediaFolder, photographersImages)
     }
 
     // methode pour Video
     Video(media, mediaFolder, photographersImages) {
         // créer une nouvelle instance de VideoType
-        new VideoType(media, mediaFolder, photographersImages)
+        return new VideoType(media, mediaFolder, photographersImages)
     }
 }
