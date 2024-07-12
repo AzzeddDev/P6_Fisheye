@@ -34,7 +34,7 @@ export class ImageType {
         dateMedia.classList.add('dateMediaAbsolute')
         dateMedia.textContent = media.date
 
-        modalMediaDisplay(buttonMedia, imgElement, media)
+        modalMediaDisplay(buttonMedia, imgElement, media, mediaList)
 
         //
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(imgElement)

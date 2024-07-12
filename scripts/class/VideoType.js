@@ -35,7 +35,7 @@ export class VideoType {
         videoLikes.textContent = media.likes
         divInfos.classList.add('media-infos-div')
 
-        modalMediaDisplay(buttonMedia, videoElement, media)
+        modalMediaDisplay(buttonMedia, videoElement, media, mediaList)
 
         //
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(videoElement)
