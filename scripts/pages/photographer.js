@@ -1,5 +1,7 @@
 import {getUserIDFromURL} from "../utils/getUserIDFromURL.js"
 import {PhotographerInfo} from "../class/PhotographerInfo.js"
+import {getPhotographerInfos} from "../api/api.js"
+import {btnFilterToggle} from "../utils/btnFilterToggle.js"
 
 async function displayPhotographerInfo() {
     const userID = getUserIDFromURL()
@@ -14,7 +16,7 @@ async function displayPhotographerInfo() {
             if (photographerData) {
 
                 // sélectionner les classes des div
-                const photographerNodeList = document.querySelectorAll(".user_infos, .user_picture, .photograph-price")
+                const photographerNodeList = document.querySelectorAll(".photographHeader__userInfos, .photographHeader__userPicture, .photographHeader__price")
                 const photographersImages = document.querySelector(".photograph-images")
 
                 // retourner la class pour générer le header et les médias
@@ -33,4 +35,5 @@ async function displayPhotographerInfo() {
 
 // Appeler la fonction pour afficher les informations du photographe
 displayPhotographerInfo()
+btnFilterToggle()
 

@@ -14,15 +14,17 @@ export class PhotographerHeader {
         // créer un p comme Lieu de naissance
         const userCountry = document.createElement( 'p')
         userCountry.textContent = photographerData.city + ", " + photographerData.country
+        userCountry.classList.add('photographHeader__userInfos__userCountry')
 
         // créer un p comme Tagline
         const userQuote = document.createElement( 'p')
         userQuote.textContent = photographerData.tagline
+        userQuote.classList.add('photographHeader__userInfos__userQuote')
 
         // créer l'element photo de profile
         const userPicture = document.createElement( 'img')
         userPicture.setAttribute("src", picture)
-        userPicture.classList.add('user-picture')
+        userPicture.classList.add('photographHeader__userPicture')
 
         // créer l'element user price
         const userPrice = document.createElement("span")

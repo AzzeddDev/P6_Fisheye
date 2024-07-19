@@ -1,4 +1,4 @@
-async function getPhotographerInfos() {
+export async function getPhotographerInfos() {
 
     try {
         const response = await fetch('data/photographers.json')
