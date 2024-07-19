@@ -1,0 +1,51 @@
+// Header Infos //
+.photographHeader {
+  display: flex;
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 0 100px;
+  justify-content: space-between;
+  padding: 50px;
+
+  &__userInfos {
+    & h2 {
+      font-size: 62px;
+      color: $primaryColor;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    &__userCountry {
+      font-size: 22px;
+      color: $primaryColor;
+      margin-bottom: 0;
+    }
+
+    &__userQuote {
+
+    }
+
+  }
+
+  &__userPicture {
+    width: 215px;
+    height: 215px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  &__contactButton {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+//  //

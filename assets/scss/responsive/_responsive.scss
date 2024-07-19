@@ -1,0 +1,20 @@
+/*  */
+
+@media all and (min-width: 767px) and (max-width: 980px) {
+  .photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media all and (max-width: 767px) {
+  .photographer_section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    margin-top: 100px;
+  }
+}
