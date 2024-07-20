@@ -8,6 +8,8 @@ export class VideoType {
     VideoType(media, mediaFolder, photographersImages) {
         // créer article + div
         const article = document.createElement("article")
+        article.classList.add("card")
+
         const divMedia = document.createElement("div")
         const divInfos = document.createElement("div")
 
@@ -19,6 +21,10 @@ export class VideoType {
         const videoInfos = document.createElement("p")
         const videoLikes = document.createElement("span")
         const dateMedia = document.createElement("span")
+
+        // definir les likes initiaux et le statut "j'aime"
+        let isLiked = false
+        let likeCount = media.likes
 
         //
         videoElement.src = `${mediaFolder}/${media.video}`
@@ -36,6 +42,17 @@ export class VideoType {
         divInfos.classList.add('media-infos-div')
 
         modalMediaDisplay(buttonMedia, videoElement, media, mediaList)
+
+        // ajouter un addEventListener a imgLikes pour updated le nombre de likes
+        videoLikes.addEventListener('click', () => {
+            if (isLiked) {
+                likeCount--
+            } else {
+                likeCount++
+            }
+            isLiked = !isLiked
+            videoLikes.textContent = likeCount
+        })
 
         //
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(videoElement)

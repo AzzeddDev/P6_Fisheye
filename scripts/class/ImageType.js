@@ -8,6 +8,10 @@ export class ImageType {
     ImageType(media, mediaFolder, photographersImages) {
         // créer article + div
         const article = document.createElement("article")
+        article.classList.add("card")
+
+        console.log(media)
+
         const divMedia = document.createElement("div")
         const divInfos = document.createElement("div")
 
@@ -20,13 +24,17 @@ export class ImageType {
         const imgLikes = document.createElement("span")
         const dateMedia = document.createElement("span")
 
+        // definir les likes initiaux et le statut "j'aime"
+        let isLiked = false
+        let likeCount = media.likes
+
         //
         imgElement.src = `${mediaFolder}/${media.image}`
         imgElement.classList.add('file-media-grid')
 
         //
         imgName.textContent = media.title
-        imgLikes.textContent = media.likes
+        imgLikes.textContent = likeCount
         divInfos.classList.add('media-infos-div')
 
         //
@@ -35,6 +43,17 @@ export class ImageType {
         dateMedia.textContent = media.date
 
         modalMediaDisplay(buttonMedia, imgElement, media, mediaList)
+
+        // ajouter un addEventListener a imgLikes pour updated le nombre de likes
+        imgLikes.addEventListener('click', () => {
+            if (isLiked) {
+                likeCount--
+            } else {
+                likeCount++
+            }
+            isLiked = !isLiked
+            imgLikes.textContent = likeCount
+        })
 
         //
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(imgElement)
