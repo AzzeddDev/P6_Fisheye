@@ -15,12 +15,12 @@ function validateForm() {
     // Clear previous error messages
     document.querySelectorAll(".error-message").forEach(element => {
         element.textContent = ""
-    });
+    })
 
     // Name validation
     const name = document.getElementById("name").value
-    if (!/\b\w+\b(?:.*\b\w+\b){2}/.test(name)) {
-        document.getElementById("nameError").textContent = "Le nom doit contenir au moins 3 mots."
+    if (name.length < 3) {
+        document.getElementById("nameError").textContent = "Le nom doit contenir au moins 3 caractères."
         isValid = false
     }
 
@@ -33,7 +33,7 @@ function validateForm() {
 
     // Message validation
     const message = document.getElementById("message").value
-    if (!/\b\w+\b(?:.*\b\w+\b){2}/.test(message)) {
+    if (message.length < 3) {
         document.getElementById("messageError").textContent = "Le message doit contenir au moins 3 mots."
         isValid = false
     }
