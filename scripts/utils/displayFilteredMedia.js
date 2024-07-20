@@ -12,7 +12,9 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
     })
 
     let mediaListChildren = photographersImages.children
+    // let mediaListChildrenNodesBtn = photographersImages.children[0].childNodes[0]
     // console.log(mediaListChildren)
+    // console.log(mediaListChildrenNodesBtn)
 
 
     // recuperer le modal
@@ -20,29 +22,33 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
     const captionText = document.getElementById("caption")
     const prevBtn = document.getElementById("prevBtn")
     const nextBtn = document.getElementById("nextBtn")
-    const modalContent = document.querySelector('.modal-content')
 
     let mediaIndex = 0
 
     for (let i = 0; i < mediaListChildren.length; i++) {
-        mediaListChildren[i].addEventListener('click', (event) => {
-            event.preventDefault()
+        let firstChildNode = mediaListChildren[i].childNodes[0]
+        // console.log(firstChildNode)
 
-            // supprimer les elements de media precedemment ajoutes
-            const existingMedia = modal.querySelector('.modal-content')
-            if (existingMedia) {
-                modal.removeChild(existingMedia)
-            }
+        if (firstChildNode && firstChildNode.nodeType === Node.ELEMENT_NODE) {
+            firstChildNode.addEventListener('click', (event) => {
+                event.preventDefault()
 
-            mediaTypeFormat(modal, i)
+                // supprimer les elements de media precedemment ajoutes
+                const existingMedia = modal.querySelector('.modal-content')
+                if (existingMedia) {
+                    modal.removeChild(existingMedia)
+                }
 
-            modal.style.display = "block"
+                mediaTypeFormat(modal, i)
 
-            captionText.textContent = mediaList[i].title
-            modal.appendChild(captionText)
+                modal.style.display = "block"
 
-            mediaIndex = i
-        })
+                captionText.textContent = mediaList[i].title
+                modal.appendChild(captionText)
+
+                mediaIndex = i
+            })
+        }
     }
 
     prevBtn.addEventListener('click', () => {
