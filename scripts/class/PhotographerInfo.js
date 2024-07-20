@@ -5,12 +5,12 @@ import { filterMedia } from "../utils/filterMedia.js"
 
 export class PhotographerInfo {
     constructor(photographerData, mediaList, photographerNodeList, photographersImages) {
-        this.Header(photographerData, photographerNodeList)
+        this.Header(photographerData, photographerNodeList, mediaList)
         this.Medias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages)
     }
 
-    Header(photographerData, photographerNodeList) {
-        return new PhotographerHeader(photographerData, photographerNodeList)
+    Header(photographerData, photographerNodeList, mediaList) {
+        return new PhotographerHeader(photographerData, photographerNodeList, mediaList)
     }
 
     Medias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages) {

@@ -1,11 +1,9 @@
-import {modalMediaDisplay} from "../utils/modalMediaDisplay.js"
-
 export class PhotographerMedias {
     constructor(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages) {
         this.renderMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages)
     }
 
-    renderMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages, index) {
+    renderMedias(photographerData, mediaList, displayFilteredMedia, filterMedia, photographersImages) {
 
         // selectionner le prénom de l'utilisateur et le transformer en lowercase
         const photographerFirstName = photographerData.name.split(' ')[0].toLowerCase().replace("-", "_")
@@ -27,18 +25,6 @@ export class PhotographerMedias {
 
         // Afficher tous les médias initialement
         displayFilteredMedia(mediaList, mediaFolder, photographersImages)
-
-        // boutons scroll gallerie
-        const prevBtn = document.getElementById("prevBtn")
-        const nextBtn = document.getElementById("nextBtn")
-        const modal = document.getElementById("gallerie")
-
-        // let mediaListChildren = photographersImages.children.length
-        // console.log(mediaListChildren)
-
-
-
-
 
         // Ajouter des écouteurs d'événements pour les boutons de filtre
         document.getElementById('filter-popilarite').addEventListener('click', () => filterMedia('popilarite'))
