@@ -11,7 +11,7 @@ export function photographerCard(data) {
     // creation de la fonction qui recupere et qui renvoies les données
     function getUserCardDOM() {
         const article = document.createElement( 'article' )
-        article.setAttribute('class', 'userTemplate')
+        article.classList.add('userTemplate')
 
         //
         const userBtnURL = document.createElement('a')
