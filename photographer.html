@@ -17,29 +17,29 @@
     </header>
 
     <main id="main">
-        <div class="photographHeader container">
-            <div class="photographHeader__userInfos"></div>
+        <div class="photographHeader container row">
+            <div class="photographHeader__userInfos col-4"></div>
             <button class="photographHeader__contactButton" onclick="openPopup()">Contactez-moi</button>
-            <div class="photographHeader__userPicture"></div>
+            <div class="photographHeader__userPicture col-4"></div>
         </div>
 
         <div class="filter-images">
             <span>Filtrer par:</span>
             <div class="dropdown">
-                <button id="filterBtn" class="dropbtn">Filtrer</button>
+                <button id="filterBtn" class="dropbtn btnFilter">Filtrer</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a id="filter-popilarite">Popularité</a>
-                    <a id="filter-date">Date</a>
-                    <a id="filter-titre">Titre</a>
+                    <a class="btnFilter__list" id="filter-popilarite">Popularité</a>
+                    <a class="btnFilter__list" id="filter-date">Date</a>
+                    <a class="btnFilter__list" id="filter-titre">Titre</a>
                 </div>
             </div>
         </div>
-        <div class="photograph-images container"></div>
+        <div class="photograph-images container p-0"></div>
 
         <div class="photographHeader__price"></div>
     </main>
 
-    <div id="gallerie" class="modal">
+    <div id="gallerie" class="modalPlayed">
         <span class="close">&times;</span>
         <div id="caption"></div>
         <a class="prev" id="prevBtn">&#10094;</a>
