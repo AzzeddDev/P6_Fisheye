@@ -49,3 +49,30 @@
 }
 
 //  //
+.btnFilter {
+  width: 150px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &__list {
+    display: block;
+    width: 150px;
+    font-size: 1rem!important;
+    font-weight: bold!important;
+    color: white!important;
+    background-color: #901C1C;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #600f0f;
+    }
+  }
+}

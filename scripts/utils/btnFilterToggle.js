@@ -16,6 +16,14 @@ export function btnFilterToggle() {
         }
     })
 
-// Event listener pour le filtre boutton
+    // Event listener pour le filtre boutton
     document.getElementById('filterBtn').addEventListener('click', btnFilter)
+
+    // changement du titre du bouton on choissisant le type de filtre
+    document.querySelectorAll('.dropdown-content a').forEach(item => {
+        item.addEventListener('click', function(event) {
+            document.getElementById('filterBtn').textContent = event.target.textContent
+            document.getElementById("myDropdown").classList.remove("show")
+        })
+    })
 }
