@@ -20,7 +20,14 @@ function validateForm() {
     // Name validation
     const name = document.getElementById("name").value
     if (name.length < 3) {
-        document.getElementById("nameError").textContent = "Le nom doit contenir au moins 3 caractères."
+        document.getElementById("nameError").textContent = "Le Prénom doit contenir au moins 3 caractères."
+        isValid = false
+    }
+
+    // Last name validation
+    const lastName = document.getElementById("lastname").value
+    if (lastName.length < 3) {
+        document.getElementById("lastnameError").textContent = "Le nom doit contenir au moins 3 caractères."
         isValid = false
     }
 
@@ -47,10 +54,12 @@ function submitForm(event) {
 
     if (validateForm()) {
         const name = document.getElementById("name").value
+        const lastName = document.getElementById("lastname").value
         const email = document.getElementById("email").value
         const message = document.getElementById("message").value
 
         console.log("Name: " + name)
+        console.log("Name: " + lastName)
         console.log("Email: " + email)
         console.log("Message: " + message)
 
