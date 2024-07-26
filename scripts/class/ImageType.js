@@ -33,6 +33,9 @@ export class ImageType {
         imgElement.classList.add('file-media-grid')
 
         //
+        const iconLike = document.createElement("i")
+        iconLike.classList.add('fa-solid', 'fa-heart')
+
         imgName.textContent = media.title
         imgLikes.textContent = likeCount
         divInfos.classList.add('media-infos-div')
@@ -56,10 +59,10 @@ export class ImageType {
         })
 
         //
-        photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(imgElement)
+        photographersImages.appendChild(article).appendChild(divMedia).appendChild(imgElement)
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(dateMedia)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgName)
-        photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgLikes)
+        photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgLikes).appendChild(iconLike)
 
         //
         return article

@@ -112,12 +112,48 @@ header .logo {
   cursor: pointer;
 }
 
+.photograph-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin: 25px 100px 0 100px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #901C1C;
+  min-width: 150px;
+  z-index: 1;
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-icon {
+  height: 16px;
+  width: 16px;
+  fill: #fff;
+  transition: transform 0.3s ease;
+}
+
+.btnToggled .dropdown-icon {
+  transform: rotate(180deg);
+}
+
 .btnFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 150px;
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  padding: 14px 10px;
+  padding: 14px 14px;
+  text-align: start;
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
@@ -129,13 +165,42 @@ header .logo {
   font-size: 1rem !important;
   font-weight: bold !important;
   color: white !important;
-  background-color: #901C1C;
-  padding: 8px 12px;
+  padding: 14px 14px;
+  border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
 }
 .btnFilter__list:hover {
   background-color: #600f0f;
+}
+
+.show {
+  display: block;
+}
+
+.btnToggled {
+  border-radius: 5px 5px 0 0;
+}
+
+.separator {
+  height: 1px;
+  width: 95%;
+  background-color: #fff;
+}
+
+.media-infos-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.media-infos-div p {
+  margin-bottom: 0;
+}
+
+.divMediaRelative {
+  display: flex;
+  position: relative;
 }
 
 .modalContent header {
@@ -246,8 +311,8 @@ header .logo {
   cursor: pointer;
 }
 
-/* MEdium devices (tablets, less than 768px) */
-@media all and (min-width: 767px) and (max-width: 980px) {
+/* Medium devices (tablets, less than 768px) */
+@media all and (min-width: 768px) and (max-width: 980px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -265,7 +330,7 @@ header .logo {
   }
 }
 /* Small devices (phones, less than 768px) */
-@media all and (max-width: 767px) {
+@media (max-width: 767px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr;
@@ -273,7 +338,7 @@ header .logo {
     margin-top: 100px;
   }
   .photograph-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   header nav {
     display: flex;

@@ -31,10 +31,15 @@ export class VideoType {
         videoElement.classList.add('file-media-grid')
         videoElement.controls = false
 
+
         //
         divMedia.classList.add('divMediaRelative')
         dateMedia.classList.add('dateMediaAbsolute')
         dateMedia.textContent = media.date
+
+        //
+        const iconLike = document.createElement("i")
+        iconLike.classList.add('fa-solid', 'fa-heart')
 
         //
         videoInfos.textContent = media.title
@@ -55,10 +60,10 @@ export class VideoType {
         })
 
         //
-        photographersImages.appendChild(article).appendChild(divMedia).appendChild(buttonMedia).appendChild(videoElement)
+        photographersImages.appendChild(article).appendChild(divMedia).appendChild(videoElement)
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(dateMedia)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(videoInfos)
-        photographersImages.appendChild(article).appendChild(divInfos).appendChild(videoLikes)
+        photographersImages.appendChild(article).appendChild(divInfos).appendChild(videoLikes).appendChild(iconLike)
 
         //
         return videoElement

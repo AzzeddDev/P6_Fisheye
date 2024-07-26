@@ -35,10 +35,6 @@
     object-fit: cover;
 }
 
-.divMediaRelative {
-    position: relative;
-}
-
 .dateMediaAbsolute {
     background-color: #901C1C;
     position: absolute;
@@ -52,13 +48,6 @@
     padding: 3px 6px;
 }
 
-.photograph-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin: 25px 100px 0 100px;
-}
-
 .filter-images {
     display: flex;
     align-items: center;
@@ -69,12 +58,6 @@
 .filter-title {
     font-size: 18px;
     font-weight: 600;
-}
-
-.media-infos-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .photographHeader__price {
@@ -90,23 +73,10 @@
 
 
 /* Bouton filtrer images */
-.dropbtn {
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 150px;
-    z-index: 1;
-}
+/*.dropbtn {*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*}*/
 
 /*.dropdown-content a {*/
 /*    display: block;*/
@@ -118,10 +88,6 @@
 
 .dropdown-content a:hover {
     background-color: #600f0f;
-}
-
-.show {
-    display:block;
 }
 
 

@@ -1,6 +1,5 @@
-/* MEdium devices (tablets, less than 768px) */
-
-@media all and (min-width: 767px) and (max-width: 980px) {
+/* Medium devices (tablets, less than 768px) */
+@media all and (min-width: 768px) and (max-width: 980px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,7 +20,7 @@
 }
 
 /* Small devices (phones, less than 768px) */
-@media all and (max-width: 767px) {
+@media (max-width: 767px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr;
@@ -30,7 +29,7 @@
   }
 
   .photograph-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr!important;
   }
 
   header nav {
