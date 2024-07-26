@@ -61,8 +61,14 @@
 
 .filter-images {
     display: flex;
+    align-items: center;
     gap: 15px;
     margin: 85px 100px 0 100px;
+}
+
+.filter-title {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .media-infos-div {

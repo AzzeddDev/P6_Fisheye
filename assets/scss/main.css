@@ -1,6 +1,6 @@
 body {
   font-family: "DM Sans", sans-serif;
-  margin: 0;
+  margin: 0 0 25px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,14 +12,11 @@ main {
 }
 
 header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10px;
   max-width: 1600px;
+  width: 100%;
+  padding: 20px 100px;
 }
 header h1 {
-  margin: 0;
   color: #901C1C;
 }
 header .logo {
@@ -36,7 +33,7 @@ header .logo {
 .photographer_section article {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: max-content;
   justify-content: center;
   align-items: center;
   justify-self: center;
@@ -51,9 +48,6 @@ header .logo {
   width: 200px;
 }
 
-.userTemplate {
-  background-color: #e2e3e5;
-}
 .userTemplate a {
   display: flex;
   flex-direction: column;
@@ -123,7 +117,7 @@ header .logo {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 14px 10px;
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
@@ -218,9 +212,9 @@ header .logo {
   font-weight: normal;
   margin: 0;
 }
-.modalContent__formInput {
+.modalContent__formInput, .modalContent textarea {
   display: block;
-  height: auto;
+  height: 50px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -234,6 +228,9 @@ header .logo {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.modalContent textarea {
+  height: 125px;
 }
 .modalContent__formLabel {
   font-size: 1.5rem;
@@ -249,13 +246,22 @@ header .logo {
   cursor: pointer;
 }
 
-/*  */
+/* MEdium devices (tablets, less than 768px) */
 @media all and (min-width: 767px) and (max-width: 980px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     margin-top: 100px;
+  }
+  .photograph-images {
+    grid-template-columns: 1fr 1fr;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
   }
 }
 /* Small devices (phones, less than 768px) */
@@ -265,6 +271,15 @@ header .logo {
     grid-template-columns: 1fr;
     gap: 70px;
     margin-top: 100px;
+  }
+  .photograph-images {
+    grid-template-columns: 1fr;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
   }
 }
 .d-flex {

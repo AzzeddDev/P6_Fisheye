@@ -82,9 +82,9 @@
     margin: 0;
   }
 
-  &__formInput {
+  &__formInput, textarea {
     display: block;
-    height: auto;
+    height: 50px;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -98,6 +98,10 @@
     appearance: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  & textarea {
+    height: 125px;
   }
 
   &__formLabel {

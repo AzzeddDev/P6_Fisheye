@@ -17,16 +17,16 @@
     </header>
 
     <main id="main">
-        <div class="photographHeader container row">
+        <div class="photographHeader container row align-items-center">
             <div class="photographHeader__userInfos col-4"></div>
             <button class="photographHeader__contactButton" onclick="openPopup()">Contactez-moi</button>
             <div class="photographHeader__userPicture col-4"></div>
         </div>
 
         <div class="filter-images">
-            <span>Filtrer par:</span>
+            <span class="filter-title">Filtrer par:</span>
             <div class="dropdown">
-                <button id="filterBtn" class="dropbtn btnFilter">Filtrer</button>
+                <button id="filterBtn" class="dropbtn btnFilter">Popularité</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a class="btnFilter__list" id="filter-popilarite">Popularité</a>
                     <a class="btnFilter__list" id="filter-date">Date</a>
@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+
         <div class="photograph-images container p-0"></div>
 
         <div class="photographHeader__price"></div>
@@ -54,19 +55,25 @@
             </header>
             <form id="popupForm" class="popup-form">
                 <div class="col-12 d-flex flex-column mt-3">
-                    <div class="col-12 d-flex flex-column mt-2">
+                    <div class="col-12 d-flex flex-column">
                         <label class="modalContent__formLabel" for="name">Prénom</label>
                         <input class="modalContent__formInput" type="text" id="name" name="name" required>
                         <div id="nameError" class="error-message"></div>
                     </div>
 
-                    <div class="col-12 d-flex flex-column mt-2">
+                    <div class="col-12 d-flex flex-column">
+                        <label class="modalContent__formLabel" for="lastname">Nom</label>
+                        <input class="modalContent__formInput" type="text" id="lastname" name="name" required>
+                        <div id="lastnameError" class="error-message"></div>
+                    </div>
+
+                    <div class="col-12 d-flex flex-column">
                         <label class="modalContent__formLabel" for="email">Email</label>
                         <input class="modalContent__formInput" type="email" id="email" name="email" required>
                         <div id="emailError" class="error-message"></div>
                     </div>
 
-                    <div class="col-12 d-flex flex-column mt-2">
+                    <div class="col-12 d-flex flex-column">
                         <label class="modalContent__formLabel" for="message">Votre message</label>
                         <textarea class="modalContent__formInput" id="message" name="message" required></textarea>
                         <div id="messageError" class="error-message"></div>
