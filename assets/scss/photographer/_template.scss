@@ -2,8 +2,6 @@
 .photographHeader {
   display: flex;
   background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
   justify-content: space-between;
   padding: 50px;
 
@@ -34,6 +32,11 @@
     object-fit: cover;
   }
 
+  &__divContactBtn {
+    display: flex;
+    justify-content: center;
+  }
+
   &__contactButton {
     font-size: 20px;
     font-weight: bold;
@@ -52,7 +55,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin: 25px 100px 0 100px;
 }
 
 // dropdown filter //
@@ -144,4 +146,11 @@
 .divMediaRelative {
   display: flex;
   position: relative;
+}
+
+.filter-images {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 85px 0 20px 0;
 }

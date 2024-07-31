@@ -6,7 +6,7 @@ body {
   align-items: center;
 }
 
-main {
+#mainIndex {
   width: 100%;
   max-width: 1600px;
 }
@@ -77,8 +77,6 @@ header .logo {
 .photographHeader {
   display: flex;
   background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
   justify-content: space-between;
   padding: 50px;
 }
@@ -99,6 +97,10 @@ header .logo {
   border-radius: 100%;
   object-fit: cover;
 }
+.photographHeader__divContactBtn {
+  display: flex;
+  justify-content: center;
+}
 .photographHeader__contactButton {
   font-size: 20px;
   font-weight: bold;
@@ -116,7 +118,6 @@ header .logo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin: 25px 100px 0 100px;
 }
 
 .dropdown-content {
@@ -201,6 +202,13 @@ header .logo {
 .divMediaRelative {
   display: flex;
   position: relative;
+}
+
+.filter-images {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 85px 0 20px 0;
 }
 
 .modalContent header {
@@ -312,7 +320,7 @@ header .logo {
 }
 
 /* Medium devices (tablets, less than 768px) */
-@media all and (min-width: 768px) and (max-width: 980px) {
+@media all and (min-width: 767px) and (max-width: 980px) {
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -331,20 +339,35 @@ header .logo {
 }
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767px) {
+  body {
+    padding-bottom: 50px;
+  }
+  .photographHeader {
+    width: auto;
+    gap: 25px;
+    justify-content: center;
+  }
+  .photographHeader__userInfos {
+    text-align: center;
+  }
   .photographer_section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 70px;
     margin-top: 100px;
   }
-  .photograph-images {
-    grid-template-columns: 1fr !important;
-  }
   header nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 10px;
+  }
+  .photograph-images {
+    grid-template-columns: 1fr !important;
+    margin: 0;
+  }
+  .filter-images {
+    margin: 0;
   }
 }
 .d-flex {
