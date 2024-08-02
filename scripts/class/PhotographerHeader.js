@@ -1,3 +1,5 @@
+
+
 export class PhotographerHeader {
     constructor(photographerData, photographerNodeList, mediaList) {
         this.PhotographerHeader(photographerData, photographerNodeList, mediaList)
@@ -26,21 +28,10 @@ export class PhotographerHeader {
         userPicture.setAttribute("src", picture)
         userPicture.classList.add('photographHeader__userPicture')
 
-        //
-        let alllikes = 0
-        mediaList.forEach((media) => {
-            alllikes += media.likes
-        })
-
-        // créer l'element user price
-        const userPrice = document.createElement("span")
-        userPrice.textContent = `${alllikes} ♥ ${photographerData.price} € / jour`
-
         // appendChild le nom et la photo de profile
         photographerNodeList[0].appendChild(userName)
         photographerNodeList[0].appendChild(userCountry)
         photographerNodeList[0].appendChild(userQuote)
         photographerNodeList[1].appendChild(userPicture)
-        photographerNodeList[2].appendChild(userPrice)
     }
 }

@@ -1,4 +1,5 @@
 import {modalMediaDisplay} from "../utils/modalMediaDisplay.js"
+import {handleLikesMedias} from "../utils/handleLikesMedias.js"
 
 export class ImageType {
     constructor(media, mediaFolder, photographersImages) {
@@ -6,11 +7,8 @@ export class ImageType {
     }
 
     ImageType(media, mediaFolder, photographersImages) {
-        // créer article + div
         const article = document.createElement("article")
         article.classList.add("card")
-
-        console.log(media)
 
         const divMedia = document.createElement("div")
         const divInfos = document.createElement("div")
@@ -18,53 +16,38 @@ export class ImageType {
         const buttonMedia = document.createElement("a")
         buttonMedia.href = "#"
 
-        // créer les elements du Media
         const imgElement = document.createElement("img")
         const imgName = document.createElement("p")
         const imgLikes = document.createElement("span")
         const dateMedia = document.createElement("span")
 
-        // definir les likes initiaux et le statut "j'aime"
-        let isLiked = false
-        let likeCount = media.likes
+        const likeCount = media.likes
 
-        //
         imgElement.src = `${mediaFolder}/${media.image}`
         imgElement.classList.add('file-media-grid')
 
-        //
         const iconLike = document.createElement("i")
         iconLike.classList.add('fa-solid', 'fa-heart')
 
         imgName.textContent = media.title
-        imgLikes.textContent = likeCount
+        imgLikes.setAttribute("id", "likeBtn")
+
         divInfos.classList.add('media-infos-div')
 
-        //
         divMedia.classList.add('divMediaRelative')
         dateMedia.classList.add('dateMediaAbsolute')
         dateMedia.textContent = media.date
 
         modalMediaDisplay(buttonMedia, imgElement, media, mediaList)
 
-        // ajouter un addEventListener a imgLikes pour updated le nombre de likes
-        imgLikes.addEventListener('click', () => {
-            if (isLiked) {
-                likeCount--
-            } else {
-                likeCount++
-            }
-            isLiked = !isLiked
-            imgLikes.textContent = likeCount
-        })
+        // Use the extracted function to handle likes
+        handleLikesMedias(imgLikes, likeCount)
 
-        //
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(imgElement)
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(dateMedia)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgName)
-        photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgLikes).appendChild(iconLike)
+        photographersImages.appendChild(article).appendChild(divInfos).appendChild(imgLikes)
 
-        //
         return article
     }
 }
