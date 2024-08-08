@@ -15,7 +15,9 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
 
     // recuperer le modal
     const modal = document.getElementById("gallerie")
-    const captionText = document.getElementById("caption")
+    // const captionText = document.getElementById("caption")
+    const captionText = document.createElement("div")
+    captionText.setAttribute("id", "caption")
     const prevBtn = document.getElementById("prevBtn")
     const nextBtn = document.getElementById("nextBtn")
 
@@ -56,6 +58,7 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
 
         mediaTypeFormat(modal, index)
         captionText.textContent = mediaList[index].title
+        modal.appendChild(captionText)
     }
 
     prevBtn.addEventListener('click', () => {

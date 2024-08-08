@@ -1,7 +1,7 @@
 import {getPhotographerInfos} from "../api/api.js"
 import {getUserIDFromURL} from "./getUserIDFromURL.js"
 
-// Global variable to keep track of the total like count
+// variable globale pour garder une trace du nombre total de likes
 let totalLikes = 0;
 
 export async function handleLikesMedias(likeElement, initialLikes) {
@@ -14,46 +14,46 @@ export async function handleLikesMedias(likeElement, initialLikes) {
     let isLiked = false
     let likeCount = initialLikes
 
-    // Update the global totalLikes
+    // mettre à jour le total global de Likes
     totalLikes += likeCount
 
-    // Create a text node to hold the like count
+    // créer un text node avoir le même nombre de likes
     const likeText = document.createTextNode(likeCount)
 
     //
     const iconLike = document.createElement("i")
     iconLike.classList.add('fa-solid', 'fa-heart')
 
-    // Append the text node and keep the existing icon
-    likeElement.innerHTML = '' // Clear any existing content
+    // ajoutez un text node et conservez l'icône existante
+    likeElement.innerHTML = '' // effacer tout contenu existant
     likeElement.appendChild(likeText)
-    likeElement.appendChild(iconLike) // Ensure icon is appended
+    likeElement.appendChild(iconLike) // assurez-vous que l'icône est ajoutée
 
     const userPriceAndLikes = document.getElementById("userPrice")
 
-    // Create or find the userPrice element to update
+    // rechercher l'élément userPrice à mettre à jour
     let userPrice = userPriceAndLikes.querySelector("span")
     if (!userPrice) {
         userPrice = document.createElement("span")
         userPriceAndLikes.appendChild(userPrice)
     }
 
-    // Initialize userPrice content
+    // initialiser le contenu userPrice
     userPrice.textContent = `${totalLikes} ♥ ${photographerData.price} € / jour`
 
 
     likeElement.addEventListener('click', () => {
         if (isLiked) {
             likeCount--
-            totalLikes-- // Decrease the total likes
+            totalLikes-- // diminuer le total de likes
         } else {
             likeCount++
-            totalLikes++ // Increase the total likes
+            totalLikes++ // augmenter le total de likes
         }
         isLiked = !isLiked
-        likeText.textContent = likeCount // Update only the text content
+        likeText.textContent = likeCount // mettre à jour uniquement le contenu du texte
 
-        // Update the userPrice element content
+        // mettre à jour le contenu de l'élément userPrice
         userPrice.textContent = `${totalLikes} ♥ ${photographerData.price} € / jour`
     })
 }

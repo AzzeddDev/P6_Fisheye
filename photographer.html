@@ -14,7 +14,7 @@
   <body>
     <header class="container-fluid">
         <nav class="container">
-            <a href="index.html" aria-label="Fisheye Home page">
+            <a href="index.html" aria-label="Fisheye Home page" aria-current="page">
                 <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
             </a>
         </nav>
@@ -51,7 +51,7 @@
 
     <div id="gallerie" class="modalPlayed">
         <span class="close">&times;</span>
-        <div id="caption"></div>
+<!--        <div id="caption"></div>-->
         <a class="prev" id="prevBtn">&#10094;</a>
         <a class="next" id="nextBtn">&#10095;</a>
     </div>
@@ -60,7 +60,7 @@
         <div class="modalContent">
             <header>
                 <h2 class="modalContent__title">Contactez-moi</h2>
-                <img src="assets/icons/close.svg" onclick="closePopup()" alt="close icon"/>
+                <img aria-label="Close" src="assets/icons/close.svg" onclick="closePopup()" alt="close icon"/>
             </header>
             <form id="popupForm" class="popup-form">
                 <div class="col-12 d-flex flex-column mt-3">

@@ -202,6 +202,7 @@ header .logo {
 .divMediaRelative {
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 
 .filter-images {
@@ -211,6 +212,62 @@ header .logo {
   margin: 85px 0 20px 0;
 }
 
+#likeBtn {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+#likeBtn i {
+  color: #901C1C;
+}
+
+/* Gallery */
+.modalPlayed {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 85vh;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .modalContent header {
   margin-bottom: 25px;
 }
