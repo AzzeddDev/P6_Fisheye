@@ -17,6 +17,10 @@
     align-items: center;
     padding: 20px 10px;
   }
+
+  .modalContent {
+    width: 82%;
+  }
 }
 
 /* Small devices (phones, less than 768px) */
@@ -56,5 +60,9 @@
 
   .filter-images {
     margin: 0;
+  }
+
+  .modalContent {
+    width: 82%;
   }
 }

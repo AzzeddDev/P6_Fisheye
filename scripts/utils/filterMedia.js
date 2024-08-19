@@ -1,8 +1,12 @@
 // fonction pour filtrer les médias
-import {displayFilteredMedia} from "./displayFilteredMedia.js";
+import {displayFilteredMedia} from "./displayFilteredMedia.js"
+import {resetTotalLikes} from "./handleLikesMedias.js"
 
 export function filterMedia(type) {
-    let filteredMediaList
+    // Réinitialiser le total des likes à chaque utilisation d'un filtre
+    resetTotalLikes();
+
+    let filteredMediaList;
 
     // conditions des filtres par: popularité - date - titre
     if (type === 'popilarite') {
@@ -12,8 +16,6 @@ export function filterMedia(type) {
     } else if (type === 'titre') {
         filteredMediaList = window.mediaList.sort((a, b) => a.title.localeCompare(b.title))
     }
-
-    // console.log(filteredMediaList)
 
     displayFilteredMedia(filteredMediaList, window.mediaFolder, window.photographersImages)
 }

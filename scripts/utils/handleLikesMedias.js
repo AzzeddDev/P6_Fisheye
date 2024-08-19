@@ -1,59 +1,66 @@
+// variable globale pour garder une trace du nombre total de likes
 import {getPhotographerInfos} from "../api/api.js"
 import {getUserIDFromURL} from "./getUserIDFromURL.js"
 
-// variable globale pour garder une trace du nombre total de likes
-let totalLikes = 0;
+let totalLikes = 0
+
+// Fonction pour réinitialiser le total des likes
+export function resetTotalLikes() {
+    totalLikes = 0
+}
 
 export async function handleLikesMedias(likeElement, initialLikes) {
-    //
     const photographersData = await getPhotographerInfos()
     const userID = getUserIDFromURL()
     const photographerData = photographersData.photographers.find(p => p.id === parseInt(userID))
-    //
 
-    let isLiked = false
+    let isLiked = false;
     let likeCount = initialLikes
 
-    // mettre à jour le total global de Likes
+    // Ajouter le nombre initial de likes au total global
     totalLikes += likeCount
 
-    // créer un text node avoir le même nombre de likes
     const likeText = document.createTextNode(likeCount)
 
-    //
     const iconLike = document.createElement("i")
     iconLike.classList.add('fa-solid', 'fa-heart')
 
-    // ajoutez un text node et conservez l'icône existante
-    likeElement.innerHTML = '' // effacer tout contenu existant
+    // effacer tout contenu existant
+    likeElement.innerHTML = ''
     likeElement.appendChild(likeText)
-    likeElement.appendChild(iconLike) // assurez-vous que l'icône est ajoutée
+
+    // appenchild l'icône
+    likeElement.appendChild(iconLike)
 
     const userPriceAndLikes = document.getElementById("userPrice")
 
-    // rechercher l'élément userPrice à mettre à jour
     let userPrice = userPriceAndLikes.querySelector("span")
     if (!userPrice) {
         userPrice = document.createElement("span")
         userPriceAndLikes.appendChild(userPrice)
     }
 
-    // initialiser le contenu userPrice
     userPrice.textContent = `${totalLikes} ♥ ${photographerData.price} € / jour`
-
 
     likeElement.addEventListener('click', () => {
         if (isLiked) {
             likeCount--
-            totalLikes-- // diminuer le total de likes
+
+            // diminuer le total de likes
+            totalLikes--
+            iconLike.style.color = ''
         } else {
             likeCount++
-            totalLikes++ // augmenter le total de likes
+
+            // augmenter le total de likes
+            totalLikes++;
+            iconLike.style.color = 'blue'
         }
         isLiked = !isLiked
-        likeText.textContent = likeCount // mettre à jour uniquement le contenu du texte
 
-        // mettre à jour le contenu de l'élément userPrice
+        // mettre à jour le contenu du texte
+        likeText.textContent = likeCount
+
         userPrice.textContent = `${totalLikes} ♥ ${photographerData.price} € / jour`
     })
 }

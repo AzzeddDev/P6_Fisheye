@@ -3,10 +3,10 @@ import {handleLikesMedias} from "../utils/handleLikesMedias.js"
 
 export class VideoType {
     constructor(media, mediaFolder, photographersImages) {
-        this.VideoType(media, mediaFolder, photographersImages)
+        this.createVideoType(media, mediaFolder, photographersImages)
     }
 
-    VideoType(media, mediaFolder, photographersImages) {
+    createVideoType(media, mediaFolder, photographersImages) {
         const article = document.createElement("article")
         article.classList.add("card")
 
@@ -21,23 +21,25 @@ export class VideoType {
         const videoLikes = document.createElement("span")
         const dateMedia = document.createElement("span")
 
-        const likeCount = media.likes
+        const likeCount = media.likes       // dynamic
 
-        videoElement.src = `${mediaFolder}/${media.video}`
+        videoElement.src = `${mediaFolder}/${media.video}`      // dynamic
         videoElement.classList.add('file-media-grid')
         videoElement.controls = false
 
         divMedia.classList.add('divMediaRelative')
         dateMedia.classList.add('dateMediaAbsolute')
-        dateMedia.textContent = media.date
+        dateMedia.textContent = media.date       // dynamic
 
         const iconLike = document.createElement("i")
         iconLike.classList.add('fa-solid', 'fa-heart')
 
-        videoInfos.textContent = media.title
+        videoInfos.textContent = media.title       // dynamic
         videoLikes.setAttribute("id", "likeBtn")
 
         divInfos.classList.add('media-infos-div')
+
+        // const mainItem = `<article class="card">...src="${mediaFolder}/${media.video}"`
 
         modalMediaDisplay(buttonMedia, videoElement, media, mediaList)
 
@@ -48,6 +50,8 @@ export class VideoType {
         photographersImages.appendChild(article).appendChild(divMedia).appendChild(dateMedia)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(videoInfos)
         photographersImages.appendChild(article).appendChild(divInfos).appendChild(videoLikes)
+        // photographersImages.innerHtml += mainItem 
+
 
         return videoElement
     }

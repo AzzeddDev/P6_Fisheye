@@ -11,21 +11,18 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
         new MediaFactory(media, mediaFolder, photographersImages)
     })
 
-    let mediaListChildren = photographersImages.children
+    const mediaListChildren = photographersImages.children
+    // console.log(mediaListChildren)
 
-    // recuperer le modal
+    // recuperer le modal et les boutons prev & next
     const modal = document.getElementById("gallerie")
-    // const captionText = document.getElementById("caption")
-    const captionText = document.createElement("div")
-    captionText.setAttribute("id", "caption")
     const prevBtn = document.getElementById("prevBtn")
     const nextBtn = document.getElementById("nextBtn")
 
     let mediaIndex = 0
 
     for (let i = 0; i < mediaListChildren.length; i++) {
-        let firstChildNode = mediaListChildren[i].childNodes[0]
-        // console.log(firstChildNode)
+        const firstChildNode = mediaListChildren[i].childNodes[0]
 
         if (firstChildNode && firstChildNode.nodeType === Node.ELEMENT_NODE) {
             firstChildNode.addEventListener('click', (event) => {
@@ -33,16 +30,14 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
 
                 // supprimer les elements de media precedemment ajoutes
                 const existingMedia = modal.querySelector('.modal-content')
+                const existingCaption = modal.querySelector('#caption')
                 if (existingMedia) {
                     modal.removeChild(existingMedia)
+                    modal.removeChild(existingCaption)
                 }
 
                 mediaTypeFormat(modal, i)
-
                 modal.style.display = "block"
-
-                captionText.textContent = mediaList[i].title
-                modal.appendChild(captionText)
 
                 mediaIndex = i
             })
@@ -52,13 +47,13 @@ export function displayFilteredMedia(mediaList, mediaFolder, photographersImages
     function showMedia(index) {
         // supprimer les elements de media precedemment ajoutes
         const existingMedia = modal.querySelector('.modal-content')
+        const existingCaption = modal.querySelector('#caption')
         if (existingMedia) {
             modal.removeChild(existingMedia)
+            modal.removeChild(existingCaption)
         }
 
         mediaTypeFormat(modal, index)
-        captionText.textContent = mediaList[index].title
-        modal.appendChild(captionText)
     }
 
     prevBtn.addEventListener('click', () => {

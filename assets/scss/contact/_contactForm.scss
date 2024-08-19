@@ -1,13 +1,5 @@
 // Modal header
 .modalContent {
-  & header {
-    margin-bottom: 25px;
-  }
-
-  & img {
-    height: 25px;
-    width: 25px;
-  }
 }
 
 // Modal background
@@ -72,6 +64,15 @@
   border-radius: .3rem;
   outline: 0;
   padding: 25px;
+
+  & header {
+    margin-bottom: 25px;
+  }
+
+  & img {
+    height: 25px;
+    width: 25px;
+  }
 
   &__title {
     display: block;

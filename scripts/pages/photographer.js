@@ -23,6 +23,9 @@ async function displayPhotographerInfo() {
                 return new PhotographerInfo(photographerData, mediaList, photographerNodeList, photographersImages)
 
             } else {
+                //
+                let main = document.getElementById("main")
+                main.innerHTML = '<h1>Cette page n\'existe pas</h1>'
                 console.log(`Photographe avec l'ID ${userID} non trouvé.`)
             }
         } else {
