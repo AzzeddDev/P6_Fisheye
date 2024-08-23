@@ -1,4 +1,4 @@
-export function mediaTypeFormat(modal, i) {
+export function mediaTypeFormat({ modal, i, mediaList, mediaFolder}) {
     // condition pour afficher images ou video
     if (mediaList[i].image) {
         const imgDisplayed = document.createElement("img")
@@ -7,6 +7,10 @@ export function mediaTypeFormat(modal, i) {
 
         imgDisplayed.classList.add("modal-content")
         imgDisplayed.src = `${mediaFolder}/${mediaList[i].image}`
+
+        // rajouter alt au img
+        imgDisplayed.setAttribute("alt", mediaList[i].title)
+
         modal.appendChild(imgDisplayed)
 
         captionText.textContent = mediaList[i].title
@@ -19,6 +23,10 @@ export function mediaTypeFormat(modal, i) {
 
         videoDisplayed.classList.add("modal-content")
         sourceVideo.src = `${mediaFolder}/${mediaList[i].video}`
+
+        // rajouter alt au img
+        videoDisplayed.setAttribute("alt", mediaList[i].title)
+
         videoDisplayed.controls = true
         modal.appendChild(videoDisplayed).appendChild(sourceVideo)
 

@@ -1,3 +1,4 @@
+/* eslint-ignore */
 // Open the popup modal
 function openPopup() {
     document.getElementById("contact_modal").style.display = "flex"
@@ -48,7 +49,7 @@ function validateForm() {
     return isValid
 }
 
-// Submit the form and log the data to the console
+// soumettre la form au console.log
 function submitForm(event) {
     event.preventDefault()
 
@@ -58,8 +59,8 @@ function submitForm(event) {
         const email = document.getElementById("email").value
         const message = document.getElementById("message").value
 
-        console.log("Name: " + name)
-        console.log("Name: " + lastName)
+        console.log("Nom: " + name)
+        console.log("Prenom: " + lastName)
         console.log("Email: " + email)
         console.log("Message: " + message)
 
@@ -68,7 +69,7 @@ function submitForm(event) {
     }
 }
 
-// Close the popup when clicking outside of the modal content
+// fermer le popup en cliquant sur le bg
 window.onclick = function(event) {
     const modal = document.getElementById("contact_modal")
     if (event.target === modal) {

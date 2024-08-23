@@ -24,7 +24,7 @@ export class PhotographerMedias {
         // console.log('Media div selector:', window.photographersImages)
 
         // Afficher tous les médias initialement
-        displayFilteredMedia(mediaList, mediaFolder, photographersImages)
+        displayFilteredMedia(mediaList, mediaFolder, photographersImages, 'popularité')
 
         // Ajouter des écouteurs d'événements pour les boutons de filtre
         document.getElementById('filter-popilarite').addEventListener('click', () => filterMedia('popilarite'))

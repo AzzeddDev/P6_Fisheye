@@ -27,6 +27,9 @@ export class VideoType {
         videoElement.classList.add('file-media-grid')
         videoElement.controls = false
 
+        // rajouter alt au video
+        videoElement.setAttribute("alt", media.title)
+
         divMedia.classList.add('divMediaRelative')
         dateMedia.classList.add('dateMediaAbsolute')
         dateMedia.textContent = media.date       // dynamic

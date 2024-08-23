@@ -26,6 +26,9 @@ export class ImageType {
         imgElement.src = `${mediaFolder}/${media.image}`
         imgElement.classList.add('file-media-grid')
 
+        // rajouter alt au img
+        imgElement.setAttribute("alt", media.title)
+
         const iconLike = document.createElement("i")
         iconLike.classList.add('fa-solid', 'fa-heart')
 

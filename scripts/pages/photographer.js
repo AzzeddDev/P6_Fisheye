@@ -6,34 +6,40 @@ import {btnFilterToggle} from "../utils/btnFilterToggle.js"
 async function displayPhotographerInfo() {
     const userID = getUserIDFromURL()
 
-    if (userID) {
-        const photographersData = await getPhotographerInfos()
 
-        if (photographersData) {
-            const photographerData = photographersData.photographers.find(p => p.id === parseInt(userID))
-            const mediaList = photographersData.media.filter(m => m.photographerId === parseInt(userID))
+    // early return
+    if (!userID){
+        console.log('ID utilisateur non trouvé dans l URL.')
+        window.alert('ID utilisateur non trouvé dans l URL')
+        return;
+    }
+    
 
-            if (photographerData) {
+    const photographersData = await getPhotographerInfos()
 
-                // sélectionner les classes des div
-                const photographerNodeList = document.querySelectorAll(".photographHeader__userInfos, .photographHeader__userPicture, .photographHeader__price")
-                const photographersImages = document.querySelector(".photograph-images")
+    if (photographersData) {
+        const photographerData = photographersData.photographers.find(p => p.id === parseInt(userID))
+        const mediaList = photographersData.media.filter(m => m.photographerId === parseInt(userID))
 
-                // retourner la class pour générer le header et les médias
-                return new PhotographerInfo(photographerData, mediaList, photographerNodeList, photographersImages)
+        if (photographerData) {
 
-            } else {
-                //
-                let main = document.getElementById("main")
-                main.innerHTML = '<h1>Cette page n\'existe pas</h1>'
-                console.log(`Photographe avec l'ID ${userID} non trouvé.`)
-            }
+            // sélectionner les classes des div
+            const photographerNodeList = document.querySelectorAll(".photographHeader__userInfos, .photographHeader__userPicture, .photographHeader__price")
+            const photographersImages = document.querySelector(".photograph-images")
+
+            // retourner la class pour générer le header et les médias
+            return new PhotographerInfo(photographerData, mediaList, photographerNodeList, photographersImages)
+
         } else {
-            console.log('Impossible de récupérer les données des photographes.')
+            //
+            let main = document.getElementById("main")
+            main.textContent = '<h1>Cette page n\'existe pas</h1>'
+            console.log(`Photographe avec l'ID ${userID} non trouvé.`)
         }
     } else {
-        console.log('ID utilisateur non trouvé dans l URL.')
+        console.log('Impossible de récupérer les données des photographes.')
     }
+
 }
 
 // Appeler la fonction pour afficher les informations du photographe
