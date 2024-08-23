@@ -28,6 +28,9 @@ export class PhotographerHeader {
         userPicture.setAttribute("src", picture)
         userPicture.classList.add('photographHeader__userPicture')
 
+        // ajouter alt sur la photo de profile
+        userPicture.setAttribute("alt", photographerData.name)
+
         // appendChild le nom et la photo de profile
         photographerNodeList[0].appendChild(userName)
         photographerNodeList[0].appendChild(userCountry)

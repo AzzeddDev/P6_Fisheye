@@ -21,6 +21,7 @@ export function photographerCard(data) {
         const userPicture = document.createElement( 'img')
         userPicture.setAttribute("src", picture)
         userPicture.classList.add('userTemplate__picture')
+        userPicture.setAttribute("alt", name)
 
         //
         const userName = document.createElement( 'h2')
